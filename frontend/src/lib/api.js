@@ -1,7 +1,7 @@
 const API_BASE = 'https://vedio-ai-chatbot.onrender.com'
 
 export async function ingestVideos(youtubeUrl, instagramUrl) {
-  const res = await fetch(`${API_BASE}/ingest`, {
+  const res = await fetch(`${API_BASE}/api/ingest`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ youtube_url: youtubeUrl, instagram_url: instagramUrl })
@@ -16,7 +16,7 @@ export async function ingestVideos(youtubeUrl, instagramUrl) {
 }
 
 export async function streamChat(question, sessionId, onEvent) {
-  const response = await fetch(`${API_BASE}/chat`, {
+  const response = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question, session_id: sessionId })
