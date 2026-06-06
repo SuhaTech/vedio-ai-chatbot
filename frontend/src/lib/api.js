@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000/api'
+const API_BASE = 'https://vedio-ai-chatbot.onrender.com'
 
 export async function ingestVideos(youtubeUrl, instagramUrl) {
   const res = await fetch(`${API_BASE}/ingest`, {
